@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectMesh</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="./images/project-symbol.png">
+    <style>
+        /* for hiding scrollbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    
+        /* for individual tags */
+        .tag {
+            width: fit-content;
+            background-color: #000000cb;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 5px 9px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .tag-close {
+            color: rgb(255, 98, 98);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="h-[100vh] w-full overflow-x-hidden box-border m-0 p-0 bg-gradient-to-b from-[#000000] to-[#000000d3] text-white">
+
+        <!-- top section -->
+        <div class="sticky top-1 max-w-[1300px] w-10/12 mx-auto flex flex-row bg-[#F5F5F5] py-2 px-10 justify-between items-center rounded-lg mt-1 shadow-2bs z-30 text-black">
+
+            <div class="flex group">
+                <img src="./images/project-symbol.png" alt="Logo" width="40px" class="rounded-full 
+                group-hover:rotate-180 duration-500">
+                <img src="./images/project-name.png" alt="Logo" width="130px">
+            </div>
+
+            <div class="font-bold text-xl translate-x-8">Home</div>
+
+            <div class="flex gap-6 items-center">
+                <button class="bg-black rounded-lg font-semibold text-sm text-white hover:text-red-600 duration-300 p-4" id="log-out-btn">LOG OUT</button>
+
+                <div>[Account image]</div>
+            </div>
+
+        </div>
+
+            <!-- log out screen -->
+            <div class="absolute w-full h-full overflow-hidden items-center justify-center z-40 bg-[#000000ad] -translate-y-[72px] hidden" id="log-out-screen">
+
+                <div class="w-[380px] h-[200px] rounded-lg bg-gradient-to-b from-red-800 to-red-400">
+                    <div class="text-2xl font-semibold text-center pt-8"> Do you want to log out?</div>
+                    <div class="w-full flex justify-evenly pt-12">
+                        <button class="px-5 py-2 text-lg font-semibold bg-black rounded-md hover:scale-110
+                        hover:text-red-500 duration-300" id="log-out-yes-btn">Yes</button>
+                        <button class="px-5 py-2 text-lg font-semibold bg-black rounded-md hover:scale-110
+                        hover:text-red-500 duration-300" id="log-out-no-btn">No</button>
+                    </div>
+                </div>
+
+            </div>
+
+        <!-- top strip -->
+        <div class="fixed top-0 bg-gradient-to-r from-[#000000] to-[#040404] w-full lg:w-[98%] h-[78px] z-20"></div>
+
+        <!-- entire front section -->
+        <section class="max-w-[1300px] w-10/12 mx-auto grid grid-rows-[auto] grid-cols-[24%_51%_24%] gap-2 pt-2 pb-4">
+
+            <!-- left section -->
+            <div class="max-h-[700px] w-full row-start-1 row-end-3 bg-gradient-to-b from-red-800 to-red-400 px-9 py-10 rounded-lg drop-shadow-bs text-white z-10">
+
+                <ul class="w-full flex flex-col font-semibold pl-[4%] text-[1.35rem] gap-5">
+
+                    <!-- dashboard -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+                            
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="dashboard"
+                        class="w-[30px] fill-white group-hover:fill-black duration-300">
+
+                            <path fill="none" d="M0 0h24v24H0V0z"></path><path d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z" class="color000000 svgShape"></path>
+                        </svg>
+
+                        <a href="/dashboard.html" class=" group-hover:text-black duration-300">User Dashboard</a>
+                    </li>
+
+                    <!-- search -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="search" class="w-[30px] fill-white group-hover:fill-black duration-300 mt-[7px]">
+
+                            <path d="M15.6207067,15.6542822 C16.0072308,15.270377 16.6268293,15.270377 17.0133534,15.6542822 L17.0133534,15.6542822 L19.5680176,17.7164156 L19.6123694,17.7164156 C20.1292102,18.2388171 20.1292102,19.0857973 19.6123694,19.6081989 C19.0955285,20.1306004 18.2575639,20.1306004 17.7407231,19.6081989 L17.7407231,19.6081989 L15.6207067,17.1784678 L15.5402577,17.0876967 C15.390397,16.8980019 15.3076306,16.6615115 15.3076306,16.416375 C15.3076306,16.1303824 15.4202849,15.8561581 15.6207067,15.6542822 Z M8.57763961,-7.10542736e-15 C10.8525711,-7.10542736e-15 13.0343273,0.913436016 14.6429467,2.53936255 C16.2515662,4.16528909 17.1552792,6.37051871 17.1552792,8.66992606 C17.1552792,13.458194 13.3149392,17.3398521 8.57763961,17.3398521 C3.84034006,17.3398521 2.13162821e-14,13.458194 2.13162821e-14,8.66992606 C2.13162821e-14,3.88165812 3.84034006,-7.10542736e-15 8.57763961,-7.10542736e-15 Z"></path>
+                        </svg>
+
+                        <a href="" class=" group-hover:text-black duration-300">Search</a>
+                    </li>
+
+                    <!-- notification -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 24" id="notifications" class="w-[30px] fill-white group-hover:fill-black duration-300 mt-[3px]">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-1.29 1.29c-.63.63-.19 1.71.7 1.71h13.17c.89 0 1.34-1.08.71-1.71L18 16z"></path>
+                        </svg>
+
+                        <a href="" class=" group-hover:text-black duration-300">Notifications</a>
+                    </li>
+
+                    <!-- saved -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="save" class="w-[28px] fill-white group-hover:fill-black duration-300 mt-[3px]">
+                            <path d="M16,2H8C6.3,2,5,3.3,5,5v16c0,0.2,0,0.3,0.1,0.5C5.4,22,6,22.1,6.5,21.9l5.5-3.2l5.5,3.2C17.7,22,17.8,22,18,22
+                            c0.6,0,1-0.4,1-1V5C19,3.3,17.7,2,16,2z"></path>
+                        </svg>
+
+                        <a href="" class=" group-hover:text-black duration-300">Saved</a>
+                    </li>
+
+                    <!-- feedback -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[28px] fill-white group-hover:fill-black duration-300 mt-[7px]">
+                            <g>
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M6.455 19L2 22.5V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.455zM11 13v2h2v-2h-2zm0-6v5h2V7h-2z"/>
+                            </g>
+                        </svg>
+
+                        <a href="" class=" group-hover:text-black duration-300">Feedback</a>
+                    </li>
+
+                    <!-- account settings -->
+                    <li class="flex group hover:scale-105 duration-300 gap-3">
+
+                        <svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                        class="w-[30px] fill-white group-hover:fill-black duration-300 mt-[7px]">
+                            <g id="Layer_2" data-name="Layer 2">
+                              <g id="invisible_box" data-name="invisible box">
+                                <rect width="48" height="48" fill="none"/>
+                              </g>
+                              <g id="Layer_7" data-name="Layer 7">
+                                <g>
+                                  <path d="M25.1,41H4a2,2,0,0,1-2-2V31.1l1-.6A25.6,25.6,0,0,1,16,27a26.7,26.7,0,0,1,7.5,1.1,21.2,21.2,0,0,0-.5,4.4A18.4,18.4,0,0,0,25.1,41Z"/>
+                                  <path d="M16,23a9,9,0,1,0-9-9A9,9,0,0,0,16,23Z"/>
+                                  <path d="M46,34.1V31.9L42.4,31l-.5-1.1,2-3.2-1.6-1.6-3.2,2L38,26.6,37.1,23H34.9L34,26.6l-1.1.5-3.2-2-1.6,1.6,2,3.2L29.6,31l-3.6.9v2.2l3.6.9.5,1.1-2,3.2,1.6,1.6,3.2-2,1.1.5.9,3.6h2.2l.9-3.6,1.1-.5,3.2,2,1.6-1.6-2-3.2.5-1.1ZM36,36a3,3,0,1,1,3-3A2.9,2.9,0,0,1,36,36Z"/>
+                                </g>
+                              </g>
+                            </g>
+                        </svg>
+                        
+                        <a href="" class=" group-hover:text-black duration-300">Account Settings</a>
+                    </li>
+
+                    <!-- new project -->
+                    <li class="w-[80%] mx-auto relative -bottom-60">
+                        <button class="bg-white w-full text-red-900 text-xl py-3 rounded-br-full 
+                        hover:bg-black hover:scale-105 hover:text-white duration-300" id="new-project-btn">
+                            New+
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- filter section -->
+            <div class="max-w-[550px] w-full h-fit bg-red-700 rounded-full flex flex-row text-white overflow-hidden place-self-center z-10">
+                <button class="w-[50%] border-r border-r-white px-[90px] py-[10px] hover:bg-red-400 hover:text-black">
+                    Following
+                </button>
+                <button class="w-[50%] border-l border-l-white px-[90px] py-[10px] hover:bg-red-400 hover:text-black">
+                    Institute
+                </button>
+            </div>
+
+            <!-- middle section -->
+            <div class="max-w-[666px] max-h-[1000px] overflow-y-scroll hide-scrollbar row-start-2 row-end-3 w-full grid grid-cols-1 gap-2 overflow-hidden rounded-md text-black">
+
+                <!-- project card 1 -->
+                <div class="w-full bg-white aspect-[8/6] rounded-md flex flex-col">
+                    
+                    <!-- profile part of card -->
+                    <div class="relative flex px-4 py-3">
+                        <button class="rounded-full w-12 h-12 overflow-hidden">
+                            <img src="./images/sample-profile.jpg" alt="">
+                        </button>
+
+                        <span class="px-4">
+                            <span class="text-lg leading-6 font-semibold flex flex-col">Rohit Sharma</span>
+                            <span class="text-sm opacity-60">Indian Cricket Team | Mumbai Indians</span>
+                        </span>
+
+                        <span class="absolute right-6 rounded-full hover:bg-red-100 p-2">
+                            <svg width="28px" height="28px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class="fill-red-700">
+                                <path d="M28.106 19.944h-0.85c-0.069-0.019-0.131-0.050-0.2-0.063-1.788-0.275-3.2-1.762-3.319-3.506-0.137-1.95 0.975-3.6 2.787-4.137 0.238-0.069 0.488-0.119 0.731-0.181h0.85c0.056 0.019 0.106 0.050 0.169 0.056 1.65 0.269 2.906 1.456 3.262 3.081 0.025 0.125 0.063 0.25 0.094 0.375v0.85c-0.019 0.056-0.050 0.113-0.056 0.169-0.262 1.625-1.419 2.863-3.025 3.238-0.156 0.038-0.3 0.081-0.444 0.119zM4.081 12.056l0.85 0c0.069 0.019 0.131 0.050 0.2 0.056 1.8 0.281 3.206 1.775 3.319 3.537 0.125 1.944-1 3.588-2.819 4.119-0.231 0.069-0.469 0.119-0.7 0.175h-0.85c-0.056-0.019-0.106-0.050-0.162-0.063-1.625-0.3-2.688-1.244-3.194-2.819-0.069-0.206-0.106-0.425-0.162-0.637v-0.85c0.019-0.056 0.050-0.113 0.056-0.169 0.269-1.631 1.419-2.863 3.025-3.238 0.15-0.037 0.294-0.075 0.437-0.113zM15.669 12.056h0.85c0.069 0.019 0.131 0.050 0.2 0.063 1.794 0.281 3.238 1.831 3.313 3.581 0.087 1.969-1.1 3.637-2.931 4.106-0.194 0.050-0.387 0.094-0.581 0.137h-0.85c-0.069-0.019-0.131-0.050-0.2-0.063-1.794-0.275-3.238-1.831-3.319-3.581-0.094-1.969 1.1-3.637 2.931-4.106 0.2-0.050 0.394-0.094 0.588-0.137z"></path>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- text part of card -->
+                    <button class="px-20 leading-5 text-start cursor-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, iusto quaerat libero voluptatum totam exercitationem quidem explicabo impedit at magni 
+                            <span class="text-blue-500">...read more</span>
+                        </p>
+                    </button>
+
+                    <!-- images/videos part -->
+                    <div class="relative h-[250px] w-[76%] place-self-center mt-6 overflow-hidden group">
+                        <!-- buttons -->
+                        <button class="absolute top-[45%] left-[2%] z-10 -rotate-90 drop-shadow-md rounded-full hover:bg-[#00000080] hidden group-hover:block" id="changeZbackward">
+                            <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#FFFFFF"/>
+                            </svg>
+                        </button>
+
+                        <button class="absolute top-[45%] right-[2%] z-10 rotate-90 drop-shadow-md rounded-full hover:bg-[#00000080] hidden group-hover:block" id="changeZforward">
+                            <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#FFFFFF"/>
+                            </svg>
+                        </button>
+
+                        <!-- images -->
+                        <button class="absolute overflow-hidden" id="rohit1">
+                            <img src="./images/rohit1.webp" alt="">
+                        </button>
+                        <button class=" absolute overflow-hidden" id="rohit2">
+                            <img src="./images/Rohit2.jpg" alt="">
+                        </button>
+                        <button class=" absolute overflow-hidden" id="rohit3">
+                            <img src="./images/rohit3.jpeg" alt="">
+                        </button>
+                        <button class=" absolute overflow-hidden" id="rohit4">
+                            <img src="./images/rohit4.webp" alt="">
+                        </button>
+                    </div>
+
+                    <!-- horizontal line -->
+                    <hr class="w-[88%] mx-auto mt-6 border-none bg-red-300 h-[1px]">
+
+                    <!-- actions on card -->
+                    <div class="flex justify-between mt-4 px-20">
+
+                        <button class="hover:scale-105 group">
+                            <svg width="28px" height="28px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-red-800 group-hover:fill-black duration-200">
+                            
+                            </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                    <g id="Dribbble-Light-Preview" transform="translate(-259.000000, -760.000000)">
+                                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                                            <path d="M203,620 L207.200006,620 L207.200006,608 L203,608 L203,620 Z M223.924431,611.355 L222.100579,617.89 C221.799228,619.131 220.638976,620 219.302324,620 L209.300009,620 L209.300009,608.021 L211.104962,601.825 C211.274012,600.775 212.223214,600 213.339366,600 C214.587817,600 215.600019,600.964 215.600019,602.153 L215.600019,608 L221.126177,608 C222.97313,608 224.340232,609.641 223.924431,611.355 L223.924431,611.355 Z" id="like-[#1385]">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </button>
+                            
+                        <button class="hover:scale-105 group">
+                            <svg  class="fill-red-800 group-hover:fill-black duration-200" width="28px" height="28px" viewBox="-0.5 -0.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-write-f">
+                                <path d='M21.289.98l.59.59c.813.814.69 2.257-.277 3.223L9.435 16.96l-3.942 1.442c-.495.182-.977-.054-1.075-.525a.928.928 0 0 1 .045-.51l1.47-3.976L18.066 1.257c.967-.966 2.41-1.09 3.223-.276zM8.904 2.19a1 1 0 1 1 0 2h-4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4a1 1 0 0 1 2 0v4a4 4 0 0 1-4 4h-12a4 4 0 0 1-4-4v-12a4 4 0 0 1 4-4h4z' />
+                            </svg>
+                        </button>
+
+                        <button class="hover:scale-105 group">
+                            <svg width="30px" height="30px" version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128" xml:space="preserve" class="fill-red-800 group-hover:fill-black duration-200">
+                                <g>
+                                    <rect x="37.6" y="69.8" width="55.6" height="3.6"/>
+                                    <circle cx="32.2" cy="27" r="10.2"/>
+                                    <path d="M47.7,77.7H30.5l0-12.8l-8.8-15.2c-0.3-0.6-0.1-1.4,0.5-1.7c0.6-0.3,1.4-0.1,1.7,0.5L34,66c0.8,1.3,2.2,2.2,3.8,2.2h17.6
+                                        c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5l-14.7,0.1L29,39.6c-0.9-1.6-2.6-2.4-4.7-2.4c-0.3,0-0.9,0.1-1.2,0.2
+                                        c-0.3,0.1-0.7,0.2-1,0.3C13.6,40.5,6.8,54.1,6.8,68.2C6.7,72.5,6.8,76,7,79.4c-0.3,4.1,2.1,8,6.1,9.5c1,0.3,2.1,0.6,3.1,0.6h25.6
+                                        v24c0,3.3,2.6,5.8,5.8,5.8s5.8-2.6,5.8-5.8V83.6c0-1.5-0.6-3-1.7-4.1C50.6,78.3,49.1,77.7,47.7,77.7z"/>
+                                    <circle cx="98.1" cy="27" r="10.2"/>
+                                    <path d="M123.5,68.2c0-14.1-6.8-27.7-15.3-30.5c-0.3-0.1-0.7-0.2-1-0.3c-0.3-0.1-0.9-0.2-1.2-0.2c-2.1,0-3.8,0.8-4.7,2.4L89.7,59.4
+                                        l-14.7-0.1c-2.4,0-4.5,2-4.5,4.5c0,2.4,2,4.5,4.5,4.5h17.6c1.6,0,3-0.9,3.8-2.2l10.2-17.6c0.3-0.6,1.1-0.8,1.7-0.5
+                                        c0.6,0.3,0.8,1.1,0.5,1.7l-8.8,15.2l0,12.8H82.6c-1.4,0-2.9,0.6-4.1,1.7c-1.2,1-1.7,2.6-1.7,4.1v29.9c0,3.3,2.6,5.8,5.8,5.8
+                                        s5.8-2.6,5.8-5.8v-24H114c1,0,2.1-0.2,3.1-0.6c4-1.5,6.4-5.5,6.1-9.5C123.5,76,123.6,72.5,123.5,68.2z"/>
+                                </g>
+                            </svg>
+                        </button>
+
+                        <button class="hover:scale-105 group">
+                            <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-red-800 group-hover:fill-black duration-200">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.803 5.33333C13.803 3.49238 15.3022 2 17.1515 2C19.0008 2 20.5 3.49238 20.5 5.33333C20.5 7.17428 19.0008 8.66667 17.1515 8.66667C16.2177 8.66667 15.3738 8.28596 14.7671 7.67347L10.1317 10.8295C10.1745 11.0425 10.197 11.2625 10.197 11.4872C10.197 11.9322 10.109 12.3576 9.94959 12.7464L15.0323 16.0858C15.6092 15.6161 16.3473 15.3333 17.1515 15.3333C19.0008 15.3333 20.5 16.8257 20.5 18.6667C20.5 20.5076 19.0008 22 17.1515 22C15.3022 22 13.803 20.5076 13.803 18.6667C13.803 18.1845 13.9062 17.7255 14.0917 17.3111L9.05007 13.9987C8.46196 14.5098 7.6916 14.8205 6.84848 14.8205C4.99917 14.8205 3.5 13.3281 3.5 11.4872C3.5 9.64623 4.99917 8.15385 6.84848 8.15385C7.9119 8.15385 8.85853 8.64725 9.47145 9.41518L13.9639 6.35642C13.8594 6.03359 13.803 5.6896 13.803 5.33333Z"/>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+                <div class="w-full bg-white aspect-[8/6] text-6xl rounded-md">
+                    
+                </div>
+
+            </div>
+
+            <!-- search bar -->
+            <button class="max-w-[280px] w-full h-fit col bg-red-300 rounded-full z-10 flex place-self-center">
+
+                <label for="#search" class="relative left-3 top-[6px]">
+                    <svg width="27px" height="27px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                        <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>  
+                </label>
+                
+                <input type="text" placeholder="Search" id="search" name="search" class="ml-4 py-2 px-3 bg-transparent text-black font-semibold placeholder:font-semibold placeholder:text-[rgba(0,0,0,0.6)] focus:outline-none">
+            </button>
+
+            <!-- right section -->
+            <div class="max-h-[700px] overflow-y-scroll hide-scrollbar bg-gradient-to-b from-red-800 to-red-400 px-6 py-3 rounded-lg drop-shadow-bs">
+
+                <div class="font-bold text-xl text-center text-white">Explore</div>
+
+                <ul class="py-5 px-2 space-y-6 text-white">
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">1</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">2</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">3</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">4</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">5</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">6</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">7</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">8</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">9</li>
+                    <li class="bg-black border-black border rounded-lg text-center w-full py-8">10</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- project submission window -->
+        <section class="absolute top-0 w-full h-full z-50 bg-[#000000ad] items-center justify-center
+        px-3 hidden" id="project-submission-screen">
+
+            <div class="relative w-[64%] h-[84%] bg-gradient-to-b from-red-800 to-red-400 rounded-lg">
+
+                <div class="text-3xl text-center py-3 font-bold text-black">New Project</div>
+
+                <button class="p-2 rounded-full absolute right-1 top-1 hover:bg-[#ffffff51]" id="new-project-close-btn">
+                    <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-black">
+                        <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"/>
+                    </svg>
+                </button>
+
+                <div class="w-full h-[90%] overflow-y-scroll hide-scrollbar py-1 px-3">
+                    
+                    <!-- submission form -->
+                    <form action="" method="" class="flex flex-col text-black gap-6">
+                        
+                        <label for="project-name-ipt" class="text-2xl font-semibold">Project Title :</label>
+                        <input type="text" name="project-name-ipt" id="project-name-ipt" maxlength="50" placeholder="maximum 50 characters" class="-mt-3 p-2 rounded-md">
+
+                        <label for="project-desc" class="text-2xl font-semibold">Project Features :</label>
+                        <textarea name="project-desc" id="project-desc" cols="30" rows="auto" placeholder="maximum 500 characters" class="h-[250px] rounded-md -mt-3 p-2 resize-none"></textarea>
+
+                        <div id="char-count" class="-mt-12 text-end px-3 text-red-700">0 / 800</div>
+
+                        <label for="project-file-ipt" class="text-2xl font-semibold">
+                            Project documents :
+                            <div class="text-lg font-normal">[Images, Videos, Links, PDFs, text files]</div>
+                            <div class="text-base font-normal text-red-900">Select upto 8 files</div>
+                        </label>
+                        <input type="file" name="project-file-ipt" id="project-file-ipt" accept="image/*,video/*,.pdf,.txt,.url" multiple class="-mt-2">
+
+                        <label for="tag-input" class="text-2xl font-semibold">Enter Tags :</label>
+                        <div id="tags-container" class="hidden -mt-3 py-1 flex-wrap gap-2">
+                        </div>
+                        <input type="text" id="tag-input" placeholder="Add one tag and press enter" class="-mt-3 p-2 rounded-md">
+                        
+                        <div class="flex justify-center gap-12">
+                            <button type="reset" class="text-lg font-semibold bg-black text-white rounded-md 
+                            py-2 px-5 hover:scale-110 hover:text-red-500 duration-300 mt-5"
+                            id="reset-tags">Reset</button>
+                            <button type="submit" class="text-lg font-semibold bg-black text-white rounded-md 
+                            py-2 px-5 hover:scale-110 hover:text-red-500 duration-300 mt-5">Upload</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer class="max-w-full bg-red-950 text-white flex px-60 py-24 justify-between gap-10">
+
+            <div class="flex gap-6">
+                <div class="hover:text-yellow-200 duration-200 text-lg">
+                    <a href="">Contact Us</a>
+                </div>
+                <div class="hover:text-yellow-200 duration-200 text-lg">
+                    <a href="">Privacy Policy</a>
+                </div>
+                <div class="hover:text-yellow-200 duration-200 text-lg">
+                    <a href="">About Us</a>
+                </div>
+            </div>
+
+            <div class="flex gap-6">
+
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="fill-white hover:fill-yellow-200 duration-200">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
+                    <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" />
+                </svg>
+
+                <svg width="32px" height="32px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-white hover:fill-yellow-200 
+                duration-200">
+
+                    <title>twitter [#154]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                
+                    </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1"  fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" >
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705" id="twitter-[#154]">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                </svg>
+
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="fill-white hover:fill-yellow-200 duration-200">
+                    <path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z" />
+                    <path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z" />
+                    <path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" />
+                </svg>
+
+                <svg width="32px" height="32px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-white hover:fill-yellow-200
+                duration-200">
+
+                    <title>github [#142]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                
+                    </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" >
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                </svg>
+
+                <svg width="32px" height="32px" viewBox="0 -3.5 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" class="fill-white hover:fill-yellow-200 duration-200">
+    
+                    <title>mail</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                
+                    </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd" sketch:type="MSPage">
+                            <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-414.000000, -261.000000)" >
+                                <path d="M430,275.916 L426.684,273.167 L415.115,285.01 L444.591,285.01 L433.235,273.147 L430,275.916 L430,275.916 Z M434.89,271.89 L445.892,283.329 C445.955,283.107 446,282.877 446,282.634 L446,262.862 L434.89,271.89 L434.89,271.89 Z M414,262.816 L414,282.634 C414,282.877 414.045,283.107 414.108,283.329 L425.147,271.927 L414,262.816 L414,262.816 Z M445,261 L415,261 L430,273.019 L445,261 L445,261 Z" id="mail" sketch:type="MSShapeGroup">
+                                </path>
+                            </g>
+                        </g>
+                </svg>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

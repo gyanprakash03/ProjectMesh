@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- <link rel="stylesheet" href="/tailwind.config.js"> -->
+    <style>
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- wrapper -->
+    <div class="h-[100vh] w-full overflow-x-hidden box-border text-white m-0 pl-3 bg-gradient-to-b from-[#000000] to-[#000000d3] flex gap-4">
+
+        
+
+        <!-- left section -->
+        <section class="w-[20%] bg-gradient-to-b from-[#f5f5f5] to-[#ffcece] bg-contain my-20 rounded-lg translate-y-8">
+
+            <!-- logo -->
+            <div class="flex absolute -top-[88px] left-[12%] w-[72%] group">
+                <img src="./images/project-symbol.png" alt="Logo" width="46px" class="rounded-full 
+                group-hover:rotate-180 duration-500">
+                <img src="./images/project-name-2.png" alt="Logo" width="160px">
+            </div>
+
+            <!-- analytics button -->
+            <div class="w-[70%] mx-auto py-12 space-y-10">
+                <div class="text-2xl font-bold text-red-900 text-center -translate-x-2">DASH</div>
+
+                <button class="text-2xl font-semibold text-red-800 flex hover:scale-105 hover:text-black duration-300 group gap-4" id="analytics-btn">
+                    <svg width="28px" height="28px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" class="fill-red-900 group-hover:fill-black">
+                        <path d="M746.667 106.667H1173.33V1493.33H746.667V106.667ZM533.333 533.333H106.667V1493.33H533.333V533.333ZM1920 1706.67H0V1824H1920V1706.67ZM1813.33 746.667H1386.67V1493.33H1813.33V746.667Z"/>
+                    </svg>
+
+                    <div>Analytics</div>
+                </button>
+
+                <!-- my projects button -->
+                <button class="text-2xl font-semibold text-red-800 flex hover:scale-105 hover:text-black duration-300 group gap-4" id="my-projects-btn">
+                    <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-red-900 group-hover:fill-black mt-1">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.4 3h13.2A2.4 2.4 0 0 1 21 5.4v13.2a2.4 2.4 0 0 1-2.4 2.4H5.4A2.4 2.4 0 0 1 3 18.6V5.4A2.4 2.4 0 0 1 5.4 3ZM9 4h2v5h9v2h-9v9H9v-9H4V9h5V4Z" />
+                    </svg>
+
+                    <div>My Projects</div>
+                </button>
+
+                <!-- contributions button -->
+                <button class="text-2xl font-semibold text-red-800 flex hover:scale-105 hover:text-black duration-300 group gap-4" id="contributions-btn">
+                    <svg class="fill-red-900 group-hover:fill-black" height="28px" width="28px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 268.733 268.733" xml:space="preserve">
+                        <g>
+                            <path d="M0,141.467v36.37c0,5.69,4.613,10.304,10.304,10.304h33.425v-39.175c0-13.63,3.309-26.493,9.135-37.864
+                                c-12.09-0.718-23.009-5.835-31.187-13.77C8.495,107.539,0,123.506,0,141.467z"/>
+                            <path d="M78.616,81.218c-5.225-8.579-8.236-18.646-8.236-29.403c0-6.551,1.13-12.839,3.183-18.697
+                                c-5.172-3.171-11.254-5.001-17.765-5.001c-18.8,0-34.041,15.239-34.041,34.04c0,18.8,15.241,34.041,34.041,34.041
+                                c2.589,0,5.107-0.299,7.531-0.847C67.813,90.029,72.951,85.282,78.616,81.218z"/>
+                            <path d="M171.078,150.335c5.518,0,10.918,1.226,15.834,3.515l8.482-6.204c-0.432-22.684-11.904-42.655-29.279-54.77
+                                c-10.175,9.679-23.919,15.639-39.037,15.639c-15.118,0-28.862-5.96-39.038-15.638c-17.712,12.35-29.312,32.86-29.312,56.091v44.552
+                                c0,6.971,5.651,12.622,12.622,12.622h66.796c-2.988-5.393-4.696-11.589-4.696-18.178
+                                C133.45,167.214,150.33,150.335,171.078,150.335z"/>
+                            <circle cx="127.078" cy="51.815" r="41.698"/>
+                            <path d="M247.104,215.36c-3.436,0-6.672,0.822-9.558,2.248l-40.529-29.645l40.234-29.431c2.957,1.518,6.301,2.391,9.852,2.391
+                                c11.279,0,20.53-8.636,21.529-19.652c1.163-12.944-9.064-23.603-21.529-23.603c-11.944,0-21.628,9.683-21.628,21.628
+                                c0,0.99,0.09,1.957,0.219,2.911l-40.359,29.521c-3.96-3.473-9.025-5.393-14.258-5.393c-11.944,0-21.628,9.683-21.628,21.628
+                                c0,11.944,9.684,21.628,21.628,21.628c5.273,0,10.329-1.941,14.258-5.394l40.408,29.557c-0.159,1.058-0.268,2.132-0.268,3.234
+                                c0,11.944,9.684,21.628,21.628,21.628c11.912,0,21.629-9.655,21.629-21.628C268.733,225.079,259.078,215.36,247.104,215.36z"/>
+                        </g>
+                    </svg>
+
+                    <div>Contributions</div>
+                </button>
+
+                <!-- settings button -->
+                <button class="text-2xl font-semibold text-red-800 flex hover:scale-105 hover:text-black duration-300 group gap-4" id="settings-btn">
+                    <svg width="28px" height="28px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" class="fill-red-900 group-hover:fill-black mt-1">
+    
+                        <title>settings</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs>
+                    
+                        </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd" sketch:type="MSPage">
+                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-103.000000, -362.000000)">
+                                    <path d="M118,382 C115.261,382 113.042,379.762 113.042,377 C113.042,374.238 115.261,372 118,372 C120.739,372 122.959,374.238 122.959,377 C122.959,379.762 120.739,382 118,382 L118,382 Z M132.008,380.536 L129.685,379.184 C129.815,378.474 129.901,377.749 129.901,377 C129.901,376.252 129.815,375.526 129.685,374.816 L132.008,373.464 C132.957,372.912 133.281,371.688 132.733,370.732 L130.75,367.268 C130.203,366.312 128.989,365.983 128.041,366.536 L125.694,367.901 C124.598,366.961 123.352,366.192 121.967,365.697 L121.967,364 C121.967,362.896 121.079,362 119.983,362 L116.017,362 C114.921,362 114.033,362.896 114.033,364 L114.033,365.697 C112.648,366.192 111.402,366.961 110.306,367.901 L107.959,366.536 C107.011,365.983 105.797,366.312 105.25,367.268 L103.267,370.732 C102.719,371.688 103.044,372.912 103.992,373.464 L106.315,374.816 C106.185,375.526 106.099,376.252 106.099,377 C106.099,377.749 106.185,378.474 106.315,379.184 L103.992,380.536 C103.044,381.088 102.719,382.312 103.267,383.268 L105.25,386.732 C105.797,387.688 107.011,388.017 107.959,387.464 L110.306,386.099 C111.402,387.039 112.648,387.809 114.033,388.303 L114.033,390 C114.033,391.104 114.921,392 116.017,392 L119.983,392 C121.079,392 121.967,391.104 121.967,390 L121.967,388.303 C123.352,387.809 124.598,387.039 125.694,386.099 L128.041,387.464 C128.989,388.017 130.203,387.688 130.75,386.732 L132.733,383.268 C133.281,382.312 132.957,381.088 132.008,380.536 L132.008,380.536 Z M118,374 C116.357,374 115.025,375.344 115.025,377 C115.025,378.657 116.357,380 118,380 C119.643,380 120.975,378.657 120.975,377 C120.975,375.344 119.643,374 118,374 L118,374 Z" id="settings" sketch:type="MSShapeGroup">
+                                    </path>
+                                </g>
+                            </g>
+                    </svg>
+
+                    <div>Settings</div>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- right section -->
+        <section class="w-[80%] bg-gradient-to-b from-[#0c0c0c] to-[#3c3c3c] -mt-1 flex gap-4 p-5">
+
+            <!-- scrolling section -->
+            <div class="w-[68%] flex flex-wrap gap-6 px-3 content-start justify-center">
+
+                <div class="w-full flex justify-between">
+
+                    <div class="text-4xl font-semibold text-red-400 translate-y-1">
+                        Hello, <span class="self-name text-white">User Name</span>
+                    </div>
+    
+                    <a href="/index.html" class="-translate-x-10 rounded-full border-2 p-3 hover:scale-105 hover:border-red-400 group duration-300">
+                        <svg fill="#FFFFFF" width="28px" height="28px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-red-400 duration-300">
+                            <title>return</title>
+                            <path d="M0 21.984q0.032-0.8 0.608-1.376l4-4q0.448-0.48 1.056-0.576t1.12 0.128 0.864 0.736 0.352 1.12v1.984h18.016q0.8 0 1.408-0.576t0.576-1.408v-8q0-0.832-0.576-1.408t-1.408-0.608h-16q-0.736 0-1.248-0.416t-0.64-0.992 0-1.152 0.64-1.024 1.248-0.416h16q2.464 0 4.224 1.76t1.76 4.256v8q0 2.496-1.76 4.224t-4.224 1.76h-18.016v2.016q0 0.64-0.352 1.152t-0.896 0.704-1.12 0.096-1.024-0.544l-4-4q-0.64-0.608-0.608-1.44z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <hr class="border-red-400 w-[98%] my-[2px]">
+
+                <div class="flex w-full gap-4">
+                    <div class="text-3xl font-semibold mb-1 pl-1">Pinned Projects</div>
+
+                    <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-red-400 mt-2">
+                        <path d="M19.1835 7.80516L16.2188 4.83755C14.1921 2.8089 13.1788 1.79457 12.0904 2.03468C11.0021 2.2748 10.5086 3.62155 9.5217 6.31506L8.85373 8.1381C8.59063 8.85617 8.45908 9.2152 8.22239 9.49292C8.11619 9.61754 7.99536 9.72887 7.86251 9.82451C7.56644 10.0377 7.19811 10.1392 6.46145 10.3423C4.80107 10.8 3.97088 11.0289 3.65804 11.5721C3.5228 11.8069 3.45242 12.0735 3.45413 12.3446C3.45809 12.9715 4.06698 13.581 5.28476 14.8L6.69935 16.2163L2.22345 20.6964C1.92552 20.9946 1.92552 21.4782 2.22345 21.7764C2.52138 22.0746 3.00443 22.0746 3.30236 21.7764L7.77841 17.2961L9.24441 18.7635C10.4699 19.9902 11.0827 20.6036 11.7134 20.6045C11.9792 20.6049 12.2404 20.5358 12.4713 20.4041C13.0192 20.0914 13.2493 19.2551 13.7095 17.5825C13.9119 16.8472 14.013 16.4795 14.2254 16.1835C14.3184 16.054 14.4262 15.9358 14.5468 15.8314C14.8221 15.593 15.1788 15.459 15.8922 15.191L17.7362 14.4981C20.4 13.4973 21.7319 12.9969 21.9667 11.9115C22.2014 10.826 21.1954 9.81905 19.1835 7.80516Z"/>
+                    </svg>
+                </div>
+
+                <div class="w-[47%] rounded-lg bg-white h-[170px]"></div>
+                <div class="w-[47%] rounded-lg bg-white h-[170px]"></div>
+
+                <!-- card holder -->
+                <div class="w-[97%] h-[400px] mt-3 rounded-lg overflow-hidden">
+
+                    <!-- cards -->
+                    <div class="h-0 bg-white text-black overflow-y-scroll hide-scrollbar dash-cards"
+                    id="dashcard4">
+                        <div class="text-center font-semibold text-xl py-3">Settings</div>
+                    </div>
+
+                    <div class="h-0 bg-white text-black overflow-y-scroll hide-scrollbar dash-cards"
+                    id="dashcard3">
+                        <div class="text-center font-semibold text-xl py-3">Contributions</div>
+                    </div>
+
+                    <div class="h-0 bg-white text-black overflow-y-scroll hide-scrollbar dash-cards"
+                    id="dashcard2">
+                        <div class="text-center font-semibold text-xl py-3">My Projects</div>
+                    </div>
+
+                    <div class="h-full bg-white text-black overflow-y-scroll hide-scrollbar dash-cards"
+                    id="dashcard1">
+                        <div class="text-center font-semibold text-xl py-3">Analytics</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- fixed profile section -->
+            <div class="w-[32%] pl-2">
+
+                <!-- buttons -->
+                <div class="flex justify-between px-4 pt-2">
+                    <svg class="fill-white hover:scale-105 hover:fill-red-400 duration-300" width="38px" height="38px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    
+                        <title>New Project</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs>
+                    
+                        </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd" sketch:type="MSPage">
+                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)">
+                                    <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup">
+                                    </path>
+                                </g>
+                            </g>
+                    </svg>
+
+                    <svg class="fill-white hover:scale-105 hover:fill-red-400 duration-300" width="38px" height="38px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+                        <title>Notifications</title>
+                        <style type="text/css">
+                            .st0{fill:none;}
+                        </style>
+                        <g id="surface1">
+                            <path d="M12,2c-0.8,0-1.5,0.7-1.5,1.5v0.7C7.3,4.9,5,7.6,5,11v4.5l-2,2.3V19h18v-1.2l-2-2.3V11c0-3.4-2.3-6.1-5.5-6.8V3.5
+                                C13.5,2.7,12.8,2,12,2z M10,20c0,1.1,0.9,2,2,2c1.1,0,2-0.9,2-2H10z"/>
+                        </g>
+                        <rect class="st0" width="24" height="24"/>
+                    </svg>
+                </div>
+
+                <div class="w-full h-[87%] mt-10 flex flex-col bg-gradient-to-b from-[#ffc0c0] to-[#ffffff]
+                rounded-lg py-4 px-7">
+                    <div class="font-bold text-3xl text-black text-center">My Profile</div>
+
+                    <!-- profile picture -->
+                    <div class="w-[120px] h-[120px] rounded-full border border-black place-self-center bg-[url(./images/rohit-profile.jpg)] bg-center bg-cover mt-6"></div>
+                    
+                    <div class="text-2xl text-center mt-3 font-semibold text-black">Rohit Sharma</div>
+
+                    <div class="text-black text-lg font-semibold opacity-50 text-center">Student</div>
+
+                    <!-- edit button -->
+                    <button class="border border-red-800 w-fit place-self-center py-2 pr-7 pl-6 mt-3 flex gap-3
+                    hover:border-black hover:scale-105 group duration-300">
+
+                        <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-red-800 mt-[2px] group-hover:fill-black duration-300">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="m3.99 16.854-1.314 3.504a.75.75 0 0 0 .966.965l3.503-1.314a3 3 0 0 0 1.068-.687L18.36 9.175s-.354-1.061-1.414-2.122c-1.06-1.06-2.122-1.414-2.122-1.414L4.677 15.786a3 3 0 0 0-.687 1.068zm12.249-12.63 1.383-1.383c.248-.248.579-.406.925-.348.487.08 1.232.322 1.934 1.025.703.703.945 1.447 1.025 1.934.058.346-.1.677-.348.925L19.774 7.76s-.353-1.06-1.414-2.12c-1.06-1.062-2.121-1.415-2.121-1.415z"/>
+                        </svg>
+
+                        <div class="text-red-800 font-semibold text-xl group-hover:text-black duration-300">
+                            Edit Profile
+                        </div>
+                    </button>
+
+                    <hr class="border-red-400 w-[98%] my-7">
+
+                    <!-- profile details -->
+                    <div class="overflow-y-scroll h-[300px]">
+                        <div class="text-black text-lg pt-2">Institute Name</div>
+                        <div class="text-red-600 text-lg">Panipat Institute of Engineering and Technology</div>
+
+                        <div class="text-black text-lg pt-2">Education Status</div>
+                        <div class="text-red-600 text-lg">B.Tech 2nd Year</div>
+
+                        <div class="text-black text-lg pt-2">Email Address</div>
+                        <div class="text-red-600 text-lg">rohit.sharma@gmail.com</div>
+
+                        <div class="text-black text-lg pt-2">Phone Number</div>
+                        <div class="text-red-600 text-lg">9058443030</div>
+
+                        <div class="text-black text-lg pt-2">State</div>
+                        <div class="text-red-600 text-lg">Haryana</div>
+
+                        <div class="text-black text-lg pt-2">City</div>
+                        <div class="text-red-600 text-lg">Panipat</div>
+
+                        <div class="text-black text-lg pt-2">Student ID</div>
+                        <div class="text-red-600 text-lg">Not Submitted</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
